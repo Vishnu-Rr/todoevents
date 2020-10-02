@@ -61,7 +61,7 @@ completed:null
         }else{
             var nan = 'A.M'
         }
-        var add = hrs+"."+min+' '+nan;
+        var add = (hrs)%12+"."+min+' '+nan;
         this.added = add;
 
   
