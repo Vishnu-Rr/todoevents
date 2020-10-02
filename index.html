@@ -1,97 +1,84 @@
-
-<html>  
-     <head>
+<html>
+    <head>
         <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
-
-        
         <style>
+            .fullpage{
+                background-color:hsl(0, 67%, 48%);
+            }
+            .content{
+background-color: white;
 
-            .themed{
-                margin-left: auto;
-                margin-right: auto;
+padding: 25px;
+
+            }
+            .days{
+
+                font-family: monospace;   
+                color:hsl(0, 67%, 48%);             
                 
             }
-
-            h1{
-                text-align: center;
-                font-size: 80px;
-                font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-                background-color: lightgrey;
-color: saddlebrown; 
-         
-}
-  .main{  
-              margin-left: 13cm;
-              margin-right:5cm;
-        
-              font-size: xx-large;
-             
-              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif  ;  
+            .dayss{
+                font-family: monospace;
+                color:gray;
             }
-            .title,li,ul{
-text-align:center;
-margin-left: auto; margin-right: auto;
-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-font-size: x-large;
-margin-top:20px ;
-   }
-.completed {
-    text-decoration: line-through;
-   
-}
-.themes{
-    background-color:black;
-    color:white;
- 
- }
- 
- 
-.ssstheme{
-    background-color:white;
-    color:black;
-}
-.buttonn{
-    margin-left: 640px;
-    margin-top: 25px;
-}
-.buttonn:hover{
-    background-color:saddlebrown;
-    color: white;
-}
-button:hover{
-    background-color:rgb(197, 179, 13);
-    color: black;
-}
+            .events{
+                font-size: x-large;
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+
+            }
+            .completesss{
+                text-decoration: line-through;
+            }
+            .button{
+            display:inline-block;
+            background-color:rgb(38, 168, 243);border-radius: 5px;
+            height: 30px;
+            }
+            .dayse{
+                font-family: monospace;
+                font-size: x-large;
+                float:right;
+                color: gray;
+            }
+          .final{
+              color: gray;
+          }
+  
 
         </style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
-     <body >
-        <div id="next" v-bind:class="{'ssstheme':theme,'themes':themek}" style="width: 100%; height: 100%;" >
-            <h1>Todoevents </h1>
-<input type="text "  v-model="message"  class="main"  :placeholder="placeholder1 + placeholder" @keyup.enter="submit($event)"  >
+    <body class="fullpage">
+        <div class="content" style="width: 45%; height:max-content; margin-right: auto;margin-left: auto;margin-top: 19px;margin-bottom: 19px ; border-radius: 15px;" >
+            <div  id="next">
+                <h1 class="days" >{{weekday}}</h1>
+                <h1 v-if=lists.length class="dayse">{{count}}task added</h1>
+                <h1 class= 'dayss'>{{month}}</h1>
+                <button v-on:click= "clearfunction()" style="margin-left: 540px; " class="button" v-on:click="counter=0 ">clearlist </button>
+                
+                  <br>
+<br>    
+                  <i class="fa fa-plus" style="font-size:40px;color: lightgray; display: inline;"></i>
+                   <input  type="text"  style=" width: 90%;height:8% ; font-size: xx-large; display: inline;" placeholder=" enter the event" v-model="message" @keyup.enter="submit($event)"v-on:keyup.enter="count++    ">                                                               
+             
+            
+                   <ul v-for="(list,index) in lists">
 
+               <span  class="events">
 
-<li v-for="(quew,index) in quew" >    <input type="checkbox" class="buttona"  v-on:change ="checkedstatus(quew)" :class="{'completed': closed}"   > 
-    <span>
-{{quew.title}}
-</span>  
-<button v-on:click="cleartodo(index) " class="button" > X </button>
-<p v-if="quew.completed">{{ getTime(quew) }}</p>
-</li>
-<button v-on:click="alltodo" class="buttonn" v-if="quew.length">clear list</button>
-<h1>vishnu</h1>
-vishnu
-<p v-if="quew.completed">{{ getTime(quew) }}</p>
-</li>
-<button v-on:click="alltodo" class="buttonn" v-if="quew.length">clear list</button>
+        <input type="checkbox" style="width: 25px;height: 25px;" class="check" v-on:change="completed(lists)" v-bind:class="{'completesss':lists.lines}">
 
-<input type="text">
+            <p style="display: inline;" class="final"> {{list.title}}</p>
+           
+           <p style="margin-left: 180px;display: inline;"class="final">{{added}}</p>
 
-</div>
-     </body>
-        
+               </span>
+            </ul>
+
+        </div>
+        </div>
+    </body>
     <script src = "main.js"></script>
-
 </html>
-
