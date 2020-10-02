@@ -40,8 +40,8 @@ margin-top:20px ;
    
 }
 .themes{
-    background-color: black;
-    color: white;
+    background-color:black;
+    color:white;
  
  }
  
@@ -68,21 +68,19 @@ button:hover{
      <body >
         <div id="next" v-bind:class="{'ssstheme':theme,'themes':themek}" style="width: 100%; height: 100%;" >
             <h1>Todoevents </h1>
-<input type="text "  v-model="message" class="main"  :placeholder="placeholder1 + placeholder" @keyup.enter="submit($event)"  >
+<input type="text "  v-model="message"  class="main"  :placeholder="placeholder1 + placeholder" @keyup.enter="submit($event)"  >
 
-<li v-for="(q,index) in quew" >    <input type="checkbox" class="buttona"v-on:change="completeTask(q)"  > 
 
-<span class="title"  v-on:dblclick="edittodo" v-bind:class="{completed: q.complete}">
-{{q.title}}
+<li v-for="(quew,index) in quew" >    <input type="checkbox" class="buttona"  v-on:change ="checkedstatus(quew)" :class="{'completed': closed}"   > 
+    <span>
+{{quew.title}}
 </span>  
 <button v-on:click="cleartodo(index) " class="button" > X </button>
+<p v-   if="quew.completed">{{ getTime(quew) }}</p>
 </li>
 <button v-on:click="alltodo" class="buttonn" v-if="quew.length">clear list</button>
-<button v-on:click="togglefunc" class="themed">
-    toggle 
-</button>
-
-
+<h1>vishnu</h1>
+vishnu
     </div>
      </body>
         
