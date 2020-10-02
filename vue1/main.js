@@ -7,51 +7,58 @@ message:'',
      placeholder1: '',
      theme:false,
      themek:false,
-     
+   
+closed:false,
+
+texted:''
     },
-    methods: {
-        
+    methods :{
+        getTime(quew) {
+            let diff = quew.completed - quew.created
+            return (diff / 1000) + ' seconds'
+        },
     submit() {
      this.quew.push({
-         id:this.quew.length+1,
+         id:this.quew.length+6  ,
          title:this.message,
-         complete: false,
-        createdtime:Date.now(),
-checkeddate:null,
-               })
-if(quew.complete=!quew.completed){
-    alert (createdtime)
-}
-         this.message = '';
+         created: Date.now(),
+         completed: null
 
+        })
+
+  this.message = ''
+         
         },
+ checkedstatus(quew){
+quew.closed = !quew.closed;  
+
+var cntime = new Date()
+quew.completed = cntime;
+
+
+
+
+ },
+
+
+         
     cleartodo(index){
         this.quew.splice(index,1);
 
-    },      
-    completeTask: function(quew){
-        quew.complete = !quew.complete;
-    },
-    alltodo(index){
-this.quew.splice(index)
-    },
-    edittodo(title){
-        this.title=title;
-    },
-    
-    togglefunc(){
-        var times = new Date
-        var hrs= times.getHours()
-        if(hrs>=6 && hrs<=18){
-            this.theme=!this.theme
-        }else {
-            this.themek=!this.themek
 
-        }
+    },      
+ 
+  
+
+    
+    alltodo(index){ 
+this.quew.splice(index);
+
     }
 },
 
-    mounted:function() {
+
+    mounted:function(){
         var time= new Date;
         var hrs = time.getHours();
 var min = time.getMinutes()
@@ -94,6 +101,7 @@ else if(Notification.permission==='denied'){
 window.navigator.onLine
 window.addEventListener("online",()=>alert('you were online'))
 window.addEventListener("offline",()=>alert('you were offline'))
+}
 
-    }    
+    
  })
