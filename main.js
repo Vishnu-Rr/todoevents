@@ -1,7 +1,6 @@
 var app = new Vue({
     el:'#next',
-    data: {
-        quew: [],
+    data:{
 weekday:'',
 weekdy: [
     'sunday',
