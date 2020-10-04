@@ -3,13 +3,13 @@ var app = new Vue({
     data:{
 weekday:'',
 weekdy: [
-    'sunday',
-    'monday',
-    'tuesday',
-    'wednesday',
-    'thursday',
-    'friday',
-    'saturday',
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
     
 ],
 month:'',
@@ -29,8 +29,7 @@ months:[
 ],
 message:'',
 lists:[],
-added:'',
-lines:false,
+
 count :0
     },
 
@@ -39,47 +38,44 @@ count :0
     var date= new Date().getDate();
     this.weekday =  weekdays + "," + date + "th"
      var mont = this.months[new Date().getMonth()]
-     this.month = mont
-},
+     this.month = mont;
+    },
 
 methods:{
   
+ 
     
-    
-    submit(){
+    submit(lists){ if(new Date().getHours()>12){
+var noon = 'P.M'
+
+    }else{
+var noon = 'A.M'    
+    }
         this.lists.push({
        id:this.lists.length+1,
  title:this.message,
-created:null,
-completed:null
-        })
-        var created =new Date()
-        var hrs=created.getHours();
-        var min = created.getMinutes();
-        if(hrs>12){
-            var nan = 'P.M'
-        }else{
-            var nan = 'A.M'
-        }
-        var add = (hrs)%12+"."+min+' '+nan;
-        this.added = add;
+ lines:false,
 
-  
-    
+time:(new Date().getHours())%12+'.'+new Date().getMinutes()  +noon  
+        })
         
         this.message=''
-
     },
 
 completed(lists) {
 lists.lines = ! lists.lines;
-
+var audio = new Audio('applause8.mp3')
+if(lists.lines===true)
+{
+    audio.play();
+}
 
 },
 
 
 clearfunction(index){
     this.lists.splice(index)
+    
 },
 
 }

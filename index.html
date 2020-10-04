@@ -15,26 +15,35 @@ padding: 25px;
             .days{
 
                 font-family: monospace;   
-                color:hsl(0, 67%, 48%);             
-                
+                color:hsl(0, 67%, 48%); 
+                display: inline;            
+                font-size:40px;
             }
             .dayss{
                 font-family: monospace;
                 color:gray;
+                font-size: 28px;
             }
             .events{
                 font-size: x-large;
                 font-family:Verdana, Geneva, Tahoma, sans-serif;
 
-
+text-align: left;
             }
             .completesss{
                 text-decoration: line-through;
             }
             .button{
-            display:inline-block;
-            background-color:rgb(38, 168, 243);border-radius: 5px;
+            background-color:hsl(0, 67%, 48%);
+            color: white;
+            border: 0px;
             height: 30px;
+            cursor:pointer;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+            .scroll{
+            overflow-y:scroll;
+                height: 290px;
             }
             .dayse{
                 font-family: monospace;
@@ -44,42 +53,66 @@ padding: 25px;
             }
           .final{
               color: gray;
+              text-align: right;
           }
-  
+  .github{
+      margin-left: 650px;
+      font-size:55px;
+      text-decoration: none;
+  }
+  .github:hover{
+      text-decoration: underline;
+      color: white;
+  }
 
         </style>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<script src="//code.tidio.co/riyclzts4tivnvnn9yaf4suomavsp3ul.js" async></script>
+<source  id="class" src="https://www.freesoundeffects.com/free-track/applause8-426813/">
     <body class="fullpage">
-                   <div class="content" style="width: 45%; height:max-content;  margin-right: auto;margin-left: auto;margin-top: 19px;margin-bottom: 19px ; border-radius: 15px;" >
+                   <div class="content" style="width: 45%; height:80%;  margin-right: auto;margin-left: auto;margin-top: 19px;margin-bottom: 19px ; border-radius: 15px;" >
             <div  id="next">
                 <h1 class="days" >{{weekday}}</h1>
-                <h1 v-if=lists.length class="dayse">{{count}}task added</h1>
+                <h1 v-if="lists.length  " class="dayse">{{lists.length}}task</h1>
                 <h1 class= 'dayss'>{{month}}</h1>
-                <button v-on:click= "clearfunction()" style="margin-left: 540px; " class="button" v-on:click="counter=0 ">clearlist </button>
+                <button v-on:click= "clearfunction()" style="margin-left: 540px; " class="button" v-on:click="reset.count">Clear    </button>
                 
                   <br>
 <br>    
-                  <i class="fa fa-plus" style="font-size:40px;color: lightgray; display: inline;"></i>
-                   <input  type="text"  style=" width: 90%;height:8% ; font-size: xx-large; display: inline;" placeholder=" enter the event" v-model="message" @keyup.enter="submit($event)"v-on:keyup.enter="count++    ">                                                               
-             
-            
+<hr>
+<i class="el-icon-plus"  style=" font-size:30px;color: gray; display: inline;"></i>
+
+                   <input  style=" width:90%; height:8% ;font-size: xx-large;border: 0px    ; " placeholder=" enter the event" v-model="message" @keyup.enter="submit($event)"v-on:keyup.enter="count++    ">                                                               
+            <hr>   
+            <div class="scroll">
+      
                    <ul v-for="(list,index) in lists">
 
-               <span  class="events">
+               <span  class="events" v-bind:class="{'completesss':list.lines}">
 
-        <input type="checkbox" style="width: 25px;height: 25px;" class="check" v-on:change="completed(lists)" v-bind:class="{'completesss':lists.lines}">
+        <input type="checkbox" style="width: 25px;height: 25px;" class="check" v-on:change="completed(list)">
 
             <p style="display: inline;" class="final"> {{list.title}}</p>
            
-           <p style="margin-left: 180px;display: inline;"class="final">{{added}}</p>
+           <p style="display: inline; margin-left: 180px;"class="final">{{ list.time }}</p>
 
                </span>
             </ul>
-
+            </div>
+            <br>
+   
         </div>
-        </div>
-        </div>
+                   </div>
+                   <a   href="https://github.com/vishnuraja005/todoevents" target="_blank" title="github account" class="github">
+      
+                    <i class="fa fa-github" style="display: inline; color: white;"></i>  
+                    <h4 style="display: inline;" ></h4>
+                    </a>
+                    </div>
     </body>
     <script src = "main.js"></script>
 </html>
