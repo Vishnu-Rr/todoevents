@@ -57,13 +57,10 @@ text-align: left;
           }
   .github{
       margin-left: 650px;
-      font-size:55px;
+      font-size:45px;
       text-decoration: none;
   }
-  .github:hover{
-      text-decoration: underline;
-      color: white;
-  }
+ 
 
         </style>
 <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
@@ -71,12 +68,12 @@ text-align: left;
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
-<source  id="class" src="https://www.freesoundeffects.com/free-track/applause8-426813/">
+    <source  id="class" src="https://www.freesoundeffects.com/free-track/applause8-426813/">
     <body class="fullpage">
                    <div class="content" style="width: 45%; height:80%;  margin-right: auto;margin-left: auto;margin-top: 19px;margin-bottom: 19px ; border-radius: 15px;" >
             <div  id="next">
                 <h1 class="days" >{{weekday}}</h1>
-                <h1 v-if="lists.length  " class="dayse">{{lists.length}}task</h1>
+                <h1 v-if="lists.length  " class="dayse">{{lists.length}}  task</h1>
                 <h1 class= 'dayss'>{{month}}</h1>
                 <button v-on:click= "clearfunction()" style="margin-left: 540px; " class="button" v-on:click="reset.count">Clear    </button>
                 
