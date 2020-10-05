@@ -30,8 +30,7 @@ months:[
 message:'',
 lists:[],
 
-count :0
-    },
+class:false    },
 
     mounted:function(){
     var weekdays = this.weekdy   [new Date().getDay()]
@@ -42,9 +41,7 @@ count :0
     },
 
 methods:{
-  
- 
-    
+
     submit(lists){ if(new Date().getHours()>12){
 var noon = 'P.M'
 
