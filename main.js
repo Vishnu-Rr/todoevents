@@ -41,8 +41,8 @@ class:false    },
     },
 
 methods:{
-
-    submit(lists){ if(new Date().getHours()>12){
+    submit(lists){ 
+        if(new Date().getHours()>12){
 var noon = 'P.M'
 
     }else{

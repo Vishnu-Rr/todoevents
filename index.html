@@ -79,23 +79,24 @@ text-align: left;
                 <h1 class= 'dayss'>{{month}}</h1>
                 <button v-on:click= "clearfunction()" style="float: right; " class="button" v-on:click="reset.count">Clear    </button>
                 
-                  <br>
+                  <br> 
 <br>    
 <hr>
 <i class="el-icon-plus"  style=" font-size:30px;color: gray; display: inline;"></i>
 
-                   <input  style=" width:90%; height:8% ;font-size: xx-large;border: 0px    ; " placeholder=" enter the event" v-model="message" @keyup.enter="submit($event)"v-on:keyup.enter="func()">                                                               
-            <hr> 
+                  <input  style=" width:90%; height:8% ;font-size: xx-large;border: 0px    ; " placeholder=" enter the event" v-model="message" @keyup.enter="submit($event)"v-on:keyup.enter="func()">                                                               
+                  <hr> 
 
 
           <div style="margin: auto; ">
             <div class="scroll">
-      
-                   <ul v-for="(list,index) in lists">
+                <p v-if="lists.length==0"    style=" font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: xx-large; text-align: center;margin-top: 90px; color: grey;">Enter and complete the Event<br>to see the magic</p>
 
+                   <ul v-for="(list,index) in lists">
                <span  class="events" v-bind:class="{'completesss':list.lines}">
 
-        <input type="checkbox" style="width: 25px;height: 25px;" class="check" v-on:change="completed(list)">
+
+                <input type="checkbox" style="width: 25px;height: 25px;" class="check" v-on:change="completed(list)">
 
             <p style="display: inline;" class="final"> {{list.title}}</p>
            
