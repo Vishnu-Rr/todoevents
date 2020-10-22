@@ -98,9 +98,9 @@ text-align: left;
 
                 <input type="checkbox" style="width: 25px;height: 25px;" class="check" v-on:change="completed(list)">
 
-            <p style="display: inline;" class="final"> {{list.title}}</p>
+            <p style="display: inline;float: left;" class="final"> {{list.title}}</p>
            
-           <p style="display: inline;margin-right: 105px;"class="final">{{ list.time }}</p>
+           <p style="display: inline;float: right;  right: 60px;"class="final">{{ list.time }}</p>
            <img v-on:click="clears()" style="float: right; position: relative;top: 7px;" width="33px" height="33px" src="https://img.icons8.com/plasticine/100/000000/filled-trash.png"/>
                </span>
                </ul>
