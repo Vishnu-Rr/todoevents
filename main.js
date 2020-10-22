@@ -60,7 +60,6 @@ if(new Date().getHours()%12==0){
 time: hrs+'.'+new Date().getMinutes()  +noon  
 
         })
-      
         this.message=''
     },
 
@@ -74,7 +73,9 @@ if(lists.lines===true)
 
 },
 
-
+clears(list,index){
+this.list.splice(index,1)
+},
 clearfunction(index){
     this.lists.splice(index)
     
