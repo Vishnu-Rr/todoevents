@@ -73,8 +73,8 @@ if(lists.lines===true)
 
 },
 
-clears(list,index){
-this.list.splice(index,1)
+clears(index){
+this.lists.splice(index,1)
 },
 clearfunction(index){
     this.lists.splice(index)
