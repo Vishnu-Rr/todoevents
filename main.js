@@ -48,13 +48,16 @@ var noon = 'P.M'
     }else{
 var noon = 'A.M'    
     }
-
+   var hrs= new Date().getHours()%12
+if(new Date().getHours()%12==0){
+    var hrs=12
+}
         this.lists.push({
        id:this.lists.length+1,
  title:this.message,
  lines:false,
 
-time: new Date().getHours()%12+'.'+new Date().getMinutes()  +noon  
+time: hrs+'.'+new Date().getMinutes()  +noon  
 
         })
       
