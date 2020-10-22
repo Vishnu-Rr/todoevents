@@ -53,8 +53,8 @@ var noon = 'A.M'
        id:this.lists.length+1,
  title:this.message,
  lines:false,
-d12:new Date().getHours()%12,if(d12=0){d12=12}, 
-time: d12 +'.'+new Date().getMinutes()  +noon  
+d12:new Date().getHours()%12,
+time: this.d12 +'.'+new Date().getMinutes()  +noon  
 
         })
       
