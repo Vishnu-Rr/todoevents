@@ -57,7 +57,7 @@ var noon = 'A.M'
 if(new Date().getHours()%12==0){
     var hrs=12
 }
-if(this.message==null){
+if(this.message=''){
 alert("please enter the valid input")
 return false
 } else
