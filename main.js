@@ -57,6 +57,11 @@ var noon = 'A.M'
 if(new Date().getHours()%12==0){
     var hrs=12
 }
+if(this.message==null){
+alert("please enter the valid input")
+return false
+} else
+{
         this.lists.push({
        id:this.lists.length+1,
  title:this.message,
@@ -69,7 +74,7 @@ time: hrs+'.'+new Date().getMinutes()  +noon
         localStorage.setItem('events', JSON.stringify(this.lists))
 
     },
-
+    },
 completed(lists) {
 lists.lines = ! lists.lines;
 var audio = new Audio('applause8.mp3')
