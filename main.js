@@ -33,11 +33,16 @@ lists:[],
 class:false    },
 
     mounted:function(){
+     
     var weekdays = this.weekdy   [new Date().getDay()]
     var date= new Date().getDate();
     this.weekday =  weekdays + "," + date + "th"
      var mont = this.months[new Date().getMonth()]
      this.month = mont;
+     var event = localStorage.getItem('events')
+     if (event != null) {
+       this.lists = JSON.parse(event)
+     }
     },
 
 methods:{
@@ -60,7 +65,9 @@ if(new Date().getHours()%12==0){
 time: hrs+'.'+new Date().getMinutes()  +noon  
 
         })
-        this.message=''
+        this.message='',
+        localStorage.setItem('events', JSON.stringify(this.lists))
+
     },
 
 completed(lists) {
