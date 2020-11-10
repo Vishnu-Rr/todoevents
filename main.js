@@ -73,7 +73,7 @@ time: hrs+'.'+new Date().getMinutes()  +noon
         this.message='',
         localStorage.setItem('events', JSON.stringify(this.lists))
 
-    },
+    }
     },
 completed(lists) {
 lists.lines = ! lists.lines;
