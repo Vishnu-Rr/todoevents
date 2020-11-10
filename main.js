@@ -82,10 +82,13 @@ if(lists.lines===true)
 
 clears(index){
 this.lists.splice(index,1)
+localStorage.setItem('events', JSON.stringify(this.lists))
+
 },
 clearfunction(index){
     this.lists.splice(index)
-    
+    localStorage.setItem('events', JSON.stringify(this.lists))
+
 },
 
 }
