@@ -57,10 +57,9 @@ var noon = 'A.M'
 if(new Date().getHours()%12==0){
     var hrs=12
 }
-if(this.message=''){
+if(this.message==''){
 alert("please enter the valid input")
-return false
-} else
+}else
 {
         this.lists.push({
        id:this.lists.length+1,
@@ -73,7 +72,7 @@ time: hrs+'.'+new Date().getMinutes()  +noon
         this.message='',
         localStorage.setItem('events', JSON.stringify(this.lists))
 
-    }
+}
     },
 completed(lists) {
 lists.lines = ! lists.lines;
