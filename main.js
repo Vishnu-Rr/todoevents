@@ -3,13 +3,13 @@ var app = new Vue({
     data:{
 weekday:'',
 weekdy: [
-    'Sunday',
-    'Monday',
-    'Tuesday',
-    'Wednesday',
-    'Thursday',
-    'Friday',
-    'Saturday',
+    'Sun',
+    'Mon',
+    'Tue',
+    'Wed',
+    'Thur',
+    'Fri',
+    'Sat',
     
 ],
 month:'',
